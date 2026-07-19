@@ -156,6 +156,23 @@
     background:var(--panel);border:1px solid var(--line);
   }
 
+  /* ---- services ---- */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .svc{
+    display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;padding:24px;transition:border-color .12s ease,transform .12s ease;
+  }
+  .svc:hover{border-color:rgba(124,140,248,.5);transform:translateY(-2px)}
+  .svc .ico{font-size:26px;margin-bottom:12px}
+  .svc .for{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .svc h3{font-size:17px;margin-bottom:8px}
+  .svc p{font-size:14.5px;color:var(--muted);flex:1}
+  .svc .book{margin-top:16px;font-size:14px;font-weight:600}
+  .bookbar{
+    margin-top:28px;text-align:center;
+  }
+  @media (max-width:900px){.services{grid-template-columns:1fr}}
+
   /* ---- projects ---- */
   .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   @media (min-width:1100px){.projects{grid-template-columns:repeat(3,1fr)}}
@@ -207,6 +224,7 @@
     <div class="links">
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
       <a href="#projects">Open source</a>
       <a href="assets/rishav-kumar-resume.pdf">Resume</a>
     </div>
@@ -430,6 +448,46 @@
       <span class="chip">Workato</span><span class="chip">PgVector</span>
       <span class="chip">Serverless</span><span class="chip">CI/CD</span>
       <span class="chip">Power Automate</span><span class="chip">System architecture</span>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <p class="sub">Ways I can help — pick a slot on my calendar and let's talk.</p>
+    <div class="services">
+      <a class="svc" href="https://calendly.com/rishav00a/book_slot">
+        <div class="ico">🚀</div>
+        <div class="for">For startups</div>
+        <h3 style="color:var(--text)">Tech architecture advisory</h3>
+        <p style="color:var(--muted)">Choosing the right stack, system design
+        reviews, and architecture decisions you won't regret at scale — from
+        someone who has built platforms from zero to production many times.</p>
+        <div class="book">Book a session →</div>
+      </a>
+      <a class="svc" href="https://calendly.com/rishav00a/book_slot">
+        <div class="ico">🧑‍💼</div>
+        <div class="for">For companies</div>
+        <h3 style="color:var(--text)">Outsourced technical interviewer</h3>
+        <p style="color:var(--muted)">I run your technical interview rounds —
+        structured, calibrated and unbiased — so your team saves engineering
+        hours while still hiring top talent.</p>
+        <div class="book">Book a session →</div>
+      </a>
+      <a class="svc" href="https://calendly.com/rishav00a/book_slot">
+        <div class="ico">🎯</div>
+        <div class="for">For candidates</div>
+        <h3 style="color:var(--text)">Mock interviews &amp; career guidance</h3>
+        <p style="color:var(--muted)">Realistic mock interviews with honest,
+        actionable feedback, plus 1-on-1 guidance on resumes, career moves and
+        interview strategy.</p>
+        <div class="book">Book a session →</div>
+      </a>
+    </div>
+    <div class="bookbar">
+      <a class="btn primary" href="https://calendly.com/rishav00a/book_slot">
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm4 6H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+        Book a slot on my calendar
+      </a>
     </div>
   </section>
 
