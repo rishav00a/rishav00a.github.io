@@ -211,6 +211,10 @@
     border-radius:14px;padding:22px;transition:border-color .12s ease,transform .12s ease;
   }
   .proj:hover{border-color:rgba(124,140,248,.5);transform:translateY(-2px);text-decoration:none}
+  .proj .pthumb{
+    width:68px;height:68px;border-radius:15px;border:1px solid var(--line);
+    margin-bottom:14px;object-fit:cover;
+  }
   .proj h3{font-size:17px;margin-bottom:6px;color:var(--text)}
   .proj p{font-size:14.5px;color:var(--muted);flex:1}
   .proj .tech{font-size:12.5px;color:var(--accent);margin-top:12px}
@@ -520,6 +524,7 @@
     <p class="sub">Projects I build and maintain — each with its own site.</p>
     <div class="projects">
       <a class="proj" href="https://rishav00a.github.io/touch_enabled_mac/">
+        <img class="pthumb" src="assets/projects/touch_enabled_mac.jpg" alt="">
         <h3>Touch Enabled Mac</h3>
         <p>macOS doesn't support touch screens — this fixes that. Two-finger
         scrolling, an iPadOS-style on-screen keyboard in every app, and
@@ -528,6 +533,7 @@
         <div class="plinks">Visit site →</div>
       </a>
       <a class="proj" href="https://rishav00a.github.io/django-nocturne/">
+        <img class="pthumb" src="assets/projects/django_nocturne.jpg" alt="">
         <h3>Django Nocturne</h3>
         <p>Django observability package with a LangChain-powered anomaly
         detection pipeline and multi-LLM root-cause diagnosis.</p>
@@ -535,6 +541,7 @@
         <div class="plinks">Visit site →</div>
       </a>
       <a class="proj" href="https://rishav00a.github.io/alembic_converger/">
+        <img class="pthumb" src="assets/projects/alembic_converger.jpg" alt="">
         <h3>Alembic Converger</h3>
         <p>Python library that automates away Alembic migration headaches —
         divergent heads, broken chains and merge conflicts.</p>
@@ -542,6 +549,7 @@
         <div class="plinks">Visit site →</div>
       </a>
       <a class="proj" href="https://rishav00a.github.io/django_url_shortener/">
+        <img class="pthumb" src="assets/projects/django_url_shortener.jpg" alt="">
         <h3>Django URL Shortener</h3>
         <p>Standalone Django library for custom URL shortening with expiration,
         tracking and analytics. Packaged and published on PyPI.</p>
@@ -549,6 +557,7 @@
         <div class="plinks">Visit site →</div>
       </a>
       <a class="proj" href="https://rishav00a.github.io/BudibaseCustomMultiSelect/">
+        <img class="pthumb" src="assets/projects/budibase_multiselect.jpg" alt="">
         <h3>Budibase Custom MultiSelect</h3>
         <p>A multiselect component for Budibase covering the features the
         built-in one lacks — drop-in and seamlessly integrated.</p>
@@ -556,6 +565,7 @@
         <div class="plinks">Visit site →</div>
       </a>
       <a class="proj" href="https://github.com/rishav00a?tab=repositories">
+        <img class="pthumb" src="assets/projects/more_github.jpg" alt="">
         <h3>…and more on GitHub</h3>
         <p>Everything else — experiments, utilities and works in progress —
         lives on my GitHub profile.</p>
