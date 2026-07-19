@@ -36,9 +36,9 @@
   a:hover{text-decoration:underline}
 
   nav{display:flex;align-items:center;gap:12px;padding:22px 0;position:relative;z-index:2}
-  nav .logo{
-    width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(135deg,#4f5ff0,#8b5cf6);font-weight:800;font-size:15px;color:#fff;
+  nav .avatar{
+    width:36px;height:36px;border-radius:50%;object-fit:cover;
+    border:1px solid var(--line);
   }
   nav .name{font-weight:700}
   nav .links{margin-left:auto;display:flex;gap:20px;font-size:14px;flex-wrap:wrap}
@@ -272,8 +272,8 @@
 <div class="wrap">
 
   <nav>
-    <div class="logo">RK</div>
-    <div class="name">Rishav Kumar</div>
+    <img class="avatar" src="assets/avatar.png" alt="Rishav Sinha">
+    <div class="name">Rishav Sinha</div>
     <div class="links">
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
