@@ -19,8 +19,11 @@
     background:var(--bg); color:var(--text);
     font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  @media (min-width:1700px){.wrap{max-width:1440px}}
+  @media (min-width:1600px){body{font-size:17px}}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
 
@@ -34,9 +37,19 @@
   nav .links a{color:var(--muted)}
   nav .links a:hover{color:var(--text);text-decoration:none}
 
-  /* ---- hero with animated icon background ---- */
-  header{position:relative;padding:76px 0 70px}
-  .iconbg{position:absolute;inset:-40px 0 0 0;pointer-events:none;z-index:0}
+  /* ---- hero with animated icon background (full-bleed) ---- */
+  header{
+    position:relative;padding:76px 0 70px;
+    width:100vw;left:50%;transform:translateX(-50%);
+  }
+  .iconbg{position:absolute;inset:-40px 0 0 0;pointer-events:none;z-index:0;overflow:hidden}
+  .fi.wide{display:none}
+  @media (min-width:1440px){.fi.wide{display:block}}
+  @media (min-width:1600px){
+    .fi.s1{width:84px;height:84px}
+    .fi.s2{width:54px;height:54px}
+    .fi.s3{width:34px;height:34px}
+  }
   .fi{
     position:absolute;opacity:.16;filter:saturate(.9);
     animation:float 9s ease-in-out infinite alternate;
@@ -49,7 +62,11 @@
     to{transform:translateY(14px) rotate(5deg)}
   }
   @media (prefers-reduced-motion: reduce){.fi{animation:none}}
-  header .inner{position:relative;z-index:1}
+  header .inner{
+    position:relative;z-index:1;
+    max-width:1200px;margin:0 auto;padding:0 24px;
+  }
+  @media (min-width:1700px){header .inner{max-width:1440px}}
   .status{
     display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);
     border:1px solid var(--line);background:rgba(18,21,31,.85);border-radius:99px;padding:6px 14px;margin-bottom:22px;
@@ -141,6 +158,13 @@
 
   /* ---- projects ---- */
   .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (min-width:1100px){.projects{grid-template-columns:repeat(3,1fr)}}
+  @media (min-width:1600px){
+    .tile.t1{padding:19px 24px;font-size:17px}
+    .tile.t1 img{width:48px;height:48px}
+    .tile.t2 img{width:30px;height:30px}
+    .xscroll{grid-auto-columns:min(86vw,380px)}
+  }
   .proj{
     display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);
     border-radius:14px;padding:22px;transition:border-color .12s ease,transform .12s ease;
@@ -208,6 +232,12 @@
       <img class="fi s3" src="assets/icons/grafana.svg"    alt="" style="left:93%;top:90%;animation-duration:8s;animation-delay:-2s">
       <img class="fi s3" src="assets/icons/flutter.svg"    alt="" style="left:88%;top:2%;animation-duration:11s;animation-delay:-9s">
       <img class="fi s3" src="assets/icons/mysql.svg"      alt="" style="left:54%;top:26%;animation-duration:9s;animation-delay:-4.5s">
+      <img class="fi s1 wide" src="assets/icons/postgresql.svg" alt="" style="left:4%;top:12%;animation-duration:12s;animation-delay:-3s">
+      <img class="fi s2 wide" src="assets/icons/graphql.svg"    alt="" style="left:12%;top:56%;animation-duration:10s;animation-delay:-6s">
+      <img class="fi s2 wide" src="assets/icons/git.svg"        alt="" style="left:2%;top:78%;animation-duration:9s;animation-delay:-2s">
+      <img class="fi s3 wide" src="assets/icons/svelte.svg"     alt="" style="left:8%;top:34%;animation-duration:11s;animation-delay:-5s">
+      <img class="fi s3 wide" src="assets/icons/angular.svg"    alt="" style="left:16%;top:6%;animation-duration:8s;animation-delay:-7s">
+      <img class="fi s3 wide" src="assets/icons/sqlite.svg"     alt="" style="left:5%;top:94%;animation-duration:10s;animation-delay:-4s">
     </div>
     <div class="inner">
       <div class="status"><span class="dot"></span>SDE II (Contract) · Amazon · Bangalore</div>
