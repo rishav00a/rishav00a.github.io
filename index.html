@@ -157,12 +157,18 @@
   }
 
   /* ---- services ---- */
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .grouplabel{
+    font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin:26px 0 12px;
+  }
+  .grouplabel:first-of-type{margin-top:0}
   .svc{
     display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);
     border-radius:14px;padding:24px;transition:border-color .12s ease,transform .12s ease;
+    text-decoration:none;
   }
-  .svc:hover{border-color:rgba(124,140,248,.5);transform:translateY(-2px)}
+  .svc:hover{border-color:rgba(124,140,248,.5);transform:translateY(-2px);text-decoration:none}
   .svc .ico{font-size:26px;margin-bottom:12px}
   .svc .for{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
   .svc h3{font-size:17px;margin-bottom:8px}
@@ -454,10 +460,10 @@
   <section id="services">
     <h2>Services</h2>
     <p class="sub">Ways I can help — pick a slot on my calendar and let's talk.</p>
+    <div class="grouplabel">For companies &amp; startups</div>
     <div class="services">
       <a class="svc" href="https://calendly.com/rishav00a/book_slot">
         <div class="ico">🚀</div>
-        <div class="for">For startups</div>
         <h3 style="color:var(--text)">Tech architecture advisory</h3>
         <p style="color:var(--muted)">Choosing the right stack, system design
         reviews, and architecture decisions you won't regret at scale — from
@@ -466,19 +472,20 @@
       </a>
       <a class="svc" href="https://calendly.com/rishav00a/book_slot">
         <div class="ico">🧑‍💼</div>
-        <div class="for">For companies</div>
         <h3 style="color:var(--text)">Outsourced technical interviewer</h3>
         <p style="color:var(--muted)">I run your technical interview rounds —
         structured, calibrated and unbiased — so your team saves engineering
         hours while still hiring top talent.</p>
         <div class="book">Book a session →</div>
       </a>
+    </div>
+    <div class="grouplabel">For candidates</div>
+    <div class="services">
       <a class="svc" href="https://calendly.com/rishav00a/book_slot">
         <div class="ico">🎯</div>
-        <div class="for">For candidates</div>
-        <h3 style="color:var(--text)">Mock interviews &amp; career guidance</h3>
+        <h3 style="color:var(--text)">Mock interviews &amp; 1-on-1 career guidance</h3>
         <p style="color:var(--muted)">Realistic mock interviews with honest,
-        actionable feedback, plus 1-on-1 guidance on resumes, career moves and
+        actionable feedback, plus guidance on resumes, career moves and
         interview strategy.</p>
         <div class="book">Book a session →</div>
       </a>
