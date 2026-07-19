@@ -98,12 +98,20 @@
   .btn.ghost{color:var(--text);border:1px solid var(--line);background:var(--panelglass)}
   .btn.ghost:hover{border-color:rgba(124,140,248,.5)}
   .btn svg{width:18px;height:18px;fill:currentColor}
-  .themetoggle{
-    width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--panel);
-    cursor:pointer;font-size:16px;line-height:1;color:var(--text);
-    display:inline-flex;align-items:center;justify-content:center;
+  .themeswitch{
+    position:relative;width:66px;height:32px;border-radius:99px;
+    border:1px solid var(--line);background:var(--panel);cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:space-between;
+    padding:0 7px;font-size:13px;line-height:1;
   }
-  .themetoggle:hover{border-color:rgba(124,140,248,.5)}
+  .themeswitch:hover{border-color:rgba(124,140,248,.5)}
+  .themeswitch .knob{
+    position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;
+    background:linear-gradient(135deg,#4f5ff0,#8b5cf6);
+    box-shadow:0 2px 8px rgba(99,102,241,.45);
+    transition:transform .22s ease;
+  }
+  [data-theme="dark"] .themeswitch .knob{transform:translateX(34px)}
   [data-theme="dark"] .fi.dk{filter:brightness(0) invert(.9)}
   .minisocial{display:flex;gap:10px}
   .minisocial a{
@@ -273,7 +281,9 @@
       <a href="#projects">Open source</a>
       <a href="assets/rishav-kumar-resume.pdf">Resume</a>
     </div>
-    <button class="themetoggle" id="tbtn" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+    <button class="themeswitch" id="tbtn" onclick="toggleTheme()" role="switch" aria-label="Toggle dark mode">
+      <span>☀️</span><span>🌙</span><span class="knob"></span>
+    </button>
   </nav>
 
   <header>
@@ -634,8 +644,8 @@ function toggleTheme(){
   r.setAttribute("data-theme",t);localStorage.setItem("theme",t);syncT();
 }
 function syncT(){
-  document.getElementById("tbtn").textContent=
-    document.documentElement.getAttribute("data-theme")==="dark"?"☀️":"🌙";
+  document.getElementById("tbtn").setAttribute("aria-checked",
+    document.documentElement.getAttribute("data-theme")==="dark");
 }
 syncT();
 </script>
