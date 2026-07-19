@@ -101,18 +101,38 @@
   h2{font-size:clamp(24px,4vw,32px);letter-spacing:-.02em;margin-bottom:8px}
   .sub{color:var(--muted);margin-bottom:32px}
 
-  /* ---- experience: horizontal scroll ---- */
-  .xscroll{
-    display:grid;grid-auto-flow:column;grid-auto-columns:min(86vw,350px);gap:16px;
-    overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 16px;
-    scrollbar-width:thin;scrollbar-color:rgba(124,140,248,.4) transparent;
+  /* ---- experience: serpentine timeline ---- */
+  .timeline{position:relative;padding:8px 0 4px}
+  .timeline::before{
+    content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;
+    background:linear-gradient(180deg,var(--accent),var(--accent2),rgba(255,255,255,.06));
+    border-radius:99px;
   }
-  .xscroll::-webkit-scrollbar{height:8px}
-  .xscroll::-webkit-scrollbar-thumb{background:rgba(124,140,248,.35);border-radius:99px}
-  .xscroll::-webkit-scrollbar-track{background:rgba(255,255,255,.04);border-radius:99px}
   .jobcard{
-    scroll-snap-align:start;display:flex;flex-direction:column;
+    position:relative;display:flex;flex-direction:column;width:calc(50% - 44px);
     background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;
+    margin-bottom:28px;
+  }
+  .jobcard:nth-child(odd){margin-right:auto}
+  .jobcard:nth-child(even){margin-left:auto}
+  .jobcard::before{
+    content:"";position:absolute;top:30px;width:13px;height:13px;border-radius:50%;
+    background:var(--bg);border:3px solid var(--accent);z-index:1;
+  }
+  .jobcard:nth-child(odd)::before{right:-51px}
+  .jobcard:nth-child(even)::before{left:-51px}
+  .jobcard::after{
+    content:"";position:absolute;top:36px;width:32px;height:2px;
+    background:linear-gradient(90deg,var(--line),rgba(124,140,248,.5));
+  }
+  .jobcard:nth-child(odd)::after{right:-38px}
+  .jobcard:nth-child(even)::after{left:-38px;transform:scaleX(-1)}
+  .jobcard.current::before{background:var(--accent)}
+  @media (max-width:860px){
+    .timeline::before{left:8px;margin-left:0}
+    .jobcard{width:auto;margin-left:36px !important;margin-right:0 !important}
+    .jobcard::before{left:-31px !important;right:auto !important}
+    .jobcard::after{left:-18px !important;right:auto !important;width:12px;transform:none !important}
   }
   .jobcard.current{border-color:rgba(124,140,248,.45)}
   .jobhead{display:flex;align-items:center;gap:12px;margin-bottom:12px}
@@ -127,7 +147,6 @@
   .jobcard p{color:var(--muted);font-size:14px;flex:1}
   .stack{font-size:12.5px;color:var(--muted);margin-top:12px}
   .stack b{color:var(--accent);font-weight:600}
-  .scrollhint{font-size:12.5px;color:var(--muted);text-align:right;margin-top:4px}
 
   /* ---- skills: visual tiles ---- */
   .tiles{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch}
@@ -186,7 +205,6 @@
     .tile.t1{padding:19px 24px;font-size:17px}
     .tile.t1 img{width:48px;height:48px}
     .tile.t2 img{width:30px;height:30px}
-    .xscroll{grid-auto-columns:min(86vw,380px)}
   }
   .proj{
     display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);
@@ -299,7 +317,7 @@
   <section id="experience">
     <h2>Experience</h2>
     <p class="sub">Eight years, two co-founded startups, and a lot of shipped software.</p>
-    <div class="xscroll">
+    <div class="timeline">
 
       <div class="jobcard current">
         <div class="jobhead">
@@ -407,7 +425,6 @@
       </div>
 
     </div>
-    <div class="scrollhint">drag or scroll horizontally →</div>
   </section>
 
   <section id="skills">
