@@ -144,20 +144,20 @@
     content:"";position:absolute;top:30px;width:13px;height:13px;border-radius:50%;
     background:var(--bg);border:3px solid var(--accent);z-index:1;
   }
-  .jobcard:nth-child(odd)::before{right:-51px}
-  .jobcard:nth-child(even)::before{left:-51px}
+  .jobcard:nth-child(odd)::before{right:-53px}
+  .jobcard:nth-child(even)::before{left:-53px}
   .jobcard::after{
-    content:"";position:absolute;top:36px;width:32px;height:2px;
+    content:"";position:absolute;top:36px;width:44px;height:2px;
     background:linear-gradient(90deg,var(--line),rgba(124,140,248,.5));
   }
-  .jobcard:nth-child(odd)::after{right:-38px}
-  .jobcard:nth-child(even)::after{left:-38px;transform:scaleX(-1)}
+  .jobcard:nth-child(odd)::after{right:-44px}
+  .jobcard:nth-child(even)::after{left:-44px;transform:scaleX(-1)}
   .jobcard.current::before{background:var(--accent)}
   @media (max-width:860px){
     .timeline::before{left:8px;margin-left:0}
     .jobcard{width:auto;margin-left:36px !important;margin-right:0 !important}
-    .jobcard::before{left:-31px !important;right:auto !important}
-    .jobcard::after{left:-18px !important;right:auto !important;width:12px;transform:none !important}
+    .jobcard::before{left:-36px !important;right:auto !important}
+    .jobcard::after{left:-27px !important;right:auto !important;width:27px;transform:none !important}
   }
   .jobcard.current{border-color:rgba(124,140,248,.45)}
   .jobhead{display:flex;align-items:center;gap:12px;margin-bottom:12px}
